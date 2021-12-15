@@ -1,0 +1,20 @@
+<form [formGroup]="dataForm">
+	<input type="hidden" formControlName="id" />
+	<div class="input-field col s12">
+		<select class="teal" id="respuesta" formControlName="respuesta">
+			<option value="" disabled selected>Escoge tu respuesta</option>
+			<option value="3">Aceptar</option>
+			<option value="2">Rechazar</option>
+		</select>
+		<label>invitacion evaluacion solicitud</label>
+	</div>
+
+	<div class="row">
+		<input type="text" formControlName="observaciones">
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+			<button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+		</div>
+	</div>
+</form>

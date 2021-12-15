@@ -1,0 +1,70 @@
+<div class="row">
+	<form [formGroup]="mainRequestForm" class="col s12">
+		<div class="row">
+			<div class="col s12 center-align">
+				<img *ngIf="UploadRequest" src="{{url_server}}/archivo/1/{{uploadedFilename}}"
+					class="vehiclePhoto center-align">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 center-align">
+				<input class="btn orange" type="file" (change)="UploadRequest($event)" name="format" />
+				&nbsp;<button class="btn btn-success " type="button" (click)="SubmitFileToServer()"> Cargar
+					Archivo</button>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="row">
+	<form [formGroup]="dataForm" class="col s12">
+		<input type="hidden" formControlName="archivo" />
+		<div class="row">
+			<div class="input-field col s3">
+				<input formControlName="fechaRadicacion" id="txtChasis" type="text">
+				<label for="txtChasis">Fecha radicacion</label>
+			</div>
+			<div class="input-field col s3">
+				<input formControlName="nombreTrabajo" id="txtMotor" type="text">
+				<label for="txtMotor">Nombre trabajo</label>
+			</div>
+			<div class="input-field col s3">
+				<input formControlName="descripcion" id="txtColor" type="text">
+				<label for="txtColor">descripcion</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s3">
+				<select id="selModalidad" formControlName="id_modalidad">
+					<option *ngFor="let b of modalidadList" value="{{b.id}}">{{b.nombre}}</option>
+				</select>
+				<label>Modalidad</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<select id="selTipoSolicitud" formControlName="id_tipo_solicitud">
+					<option *ngFor="let c of tipoSolicitudList" value="{{c.id}}">{{c.nombre}}</option>
+				</select>
+				<label>Tipo Solicitud</label>
+			</div>
+			<div class="input-field col s6">
+				<select id="selArea" formControlName="id_area_investigacion">
+					<option *ngFor="let p of areaInvestigacionList" value="{{p.id}}">{{p.nombre}}</option>
+				</select>
+				<label>Area investigacion</label>
+			</div>
+			<div class="input-field col s6">
+				<select id="selProponente" formControlName="id_proponente">
+					<option *ngFor="let pc of  proponenteList" value="{{pc.id}}">{{pc.primerNombre}}</option>
+				</select>
+				<label>Proponente</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+				&nbsp;<a class="btn btn-warning orange" routerLink="/parametros/listar-solicitud">Cancelar</a>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,35 @@
+<div class="row">
+	<form [formGroup]="mainFormat" class="col s12">
+		<div class="row">
+			<div class="col s12 center-align">
+				<img *ngIf="uploadedFormat" src="{{url_server}}/archivo/3/{{uploadedFilename}}"
+					class="vehiclePhoto center-align">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 center-align">
+				<input class="btn orange" type="file" (change)="UploadFormat($event)" name="format" />
+				&nbsp;<button class="btn btn-success " type="button" (click)="SubmitFileToServer()"> Cargar
+					Formato</button>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="row">
+	<form [formGroup]="dataForm" class="col s12">
+		<input type="hidden" formControlName="formato" />
+		<div class="row">
+			<div class="input-field col s3">
+				<input formControlName="nombre" id="txtNombre" type="text">
+				<label for="txtNombre">Nombre</label>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+					&nbsp;<a class="btn btn-warning orange" routerLink="/parametros/listar-tipoSolicitud">Cancelar</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

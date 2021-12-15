@@ -1,0 +1,49 @@
+<div class="row">
+	<form [formGroup]="dataForm" class="col s12">
+		<input type="hidden" formControlName="id" />
+		<div class="row">
+			<div class="input-field col s12">
+				<input formControlName="primerNombre" id=" txtName" type="text">
+				<label class="active" for="txtName">Primer Nombre</label>
+			</div>
+			<div class="input-field col s12">
+				<input formControlName="otrosNombres" id=" txtName" type="text">
+				<label class="active" for="txtName">Otros Nombres</label>
+			</div>
+			<div class="input-field col s12">
+				<input formControlName="primerApellido" id=" txtName" type="text">
+				<label class="active" for="txtName">Primer Apellido</label>
+			</div>
+			<div class="input-field col s12">
+				<input formControlName="segundoApellido" id=" txtName" type="text">
+				<label class="active" for="txtName">primer Apellido</label>
+			</div>
+			<div class="input-field col s12">
+				<input formControlName="documento" id=" txtName" type="text">
+				<label class="active" for="txtName">Documento</label>
+			</div>
+			<div class="input-field col s12">
+				<input formControlName="celular" id=" txtName" type="text">
+				<label class="active" for="txtName">Celular</label>
+			</div>
+			<div class="input-field col s12">
+				<input formControlName="correo" id=" txtName" type="text">
+				<label class="active" for="txtName">Correo</label>
+			</div>
+			<div class="input-field col s8 select">
+				<div>
+					<label class="fc">Tipo de Vinculacion</label>
+				</div>
+				<select class="uno" id="selTipoVinculacion" formControlName="vinculacionId">
+					<option *ngFor=" let f of vinculacionList" class="opciones" value="{{f.id}}">{{f.nombre}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<button type="button" class="btn btn-success" (click)="SaveRecord()">Guardar</button>
+				&nbsp;<a class="btn btn-warning orange" routerLink="/parametros/listar-proponente">Cancelar</a>
+			</div>
+		</div>
+	</form>
+</div>
