@@ -45,6 +45,8 @@ import { EliminarInvitacionComponent } from './invitacion/eliminar-invitacion/el
 import { ListarInvitacionComponent } from './invitacion/listar-invitacion/listar-invitacion.component';
 import { EditarInvitacionComponent } from './invitacion/editar-invitacion/editar-invitacion.component';
 import { RespuestaInvitacionComponent } from './invitacion/respuesta-invitacion/respuesta-invitacion.component';
+import { EditarResultadoEvaluacionComponent } from './resultadoEvaluacion/editar-resultado-evaluacion/editar-resultado-evaluacion.component';
+import { ListarResultadoEvaluacionComponent } from './resultadoEvaluacion/listar-resultado-evaluacion/listar-resultado-evaluacion.component';
 
 const routes: Routes = [
   //Rutas Modalidad
@@ -262,6 +264,17 @@ const routes: Routes = [
   {
     path: 'respuesta-invitacion/:id',
     component: RespuestaInvitacionComponent,
+  },
+    /****************************************************************** */
+  // Rutas evaluacion
+
+  {
+    path: 'listar-resultado-evaluacion',
+    component: ListarResultadoEvaluacionComponent,
+  },
+  {
+    path: 'editar-resultado-evaluacion/:id',
+    component: EditarResultadoEvaluacionComponent,
   },
 ];
 

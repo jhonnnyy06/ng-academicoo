@@ -10,6 +10,8 @@ import { UsuarioModel } from 'src/app/models/seguridad/usuario.model';
 import { UsuarioService } from 'src/app/services/seguridad/usuario.service';
 import { JuradoModel } from 'src/app/models/parametros/jurado.model';
 import { JuradoService } from 'src/app/services/parametros/jurado.service';
+import { ResultadoEvaluacionModel } from 'src/app/models/parametros/resultadoEvaluacion.model';
+import { ResultadoEvaluacionService } from 'src/app/services/invitacion/resultado-evaluacion.service';
 import * as moment from 'moment';
 declare const ShowGeneralMessage: any;
 declare const InitSelect: any;
@@ -28,7 +30,8 @@ export class RespuestaInvitacionComponent implements OnInit {
     private service2: UsuarioService,
     private service3: JuradoService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private Service4: ResultadoEvaluacionService,
   ) {}
 
   ngOnInit(): void {
@@ -91,6 +94,18 @@ export class RespuestaInvitacionComponent implements OnInit {
       this.service.RequestResponse(model).subscribe({
         next: (data: RespuestaInvitacionModel) => {
           ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE);
+        },
+      });
+
+      let res = new ResultadoEvaluacionModel();
+      res.id_evaluacionSolicitud = this.GetDF['id'].value;
+      res.formato_diligenciado = "";
+      res.respuesta = "";
+
+      this.Service4.SaveRecord(res).subscribe({
+        next: (data: ResultadoEvaluacionModel) => {
+          console.log('Resultado Evaluacion Creado');
+          
         },
       });
 

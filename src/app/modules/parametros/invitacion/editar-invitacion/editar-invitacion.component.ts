@@ -64,18 +64,19 @@ export class EditarInvitacionComponent implements OnInit {
             } 
          } 
          if(data.id_jurado){
-           this.service3.SearchRecord(data.id_jurado).subscribe({
-            next: (data: JuradoModel) => {
-              if(data.nombreCompleto && data.celular && data.correo && data.id){
-                this.nombre = data.nombreCompleto;
-                this.celular = data.celular;
-                this.correo = data.correo;
-                this.id_jurado = data.id
-              }
-                
+            this.service3.SearchRecord(data.id_jurado).subscribe({
+              next: (data: JuradoModel) => {
+                if(data.nombreCompleto && data.celular && data.correo && data.id){
+                  this.nombre = data.nombreCompleto;
+                  this.celular = data.celular;
+                  this.correo = data.correo;
+                  this.id_jurado = data.id
+                }
+                  
 
-            },
-          });}
+              },
+            });
+          }
           
           
         }
@@ -94,7 +95,7 @@ export class EditarInvitacionComponent implements OnInit {
 
     this.service2.RequestRecord(model).subscribe({
       next: (data: RespuestaInvitacionModel) => {
-        ShowGeneralMessage(ConfigurationData.SAVED_MESSAGE);
+        ShowGeneralMessage(ConfigurationData.NOTIFICATION_MESSAGE);
       },
     });
     

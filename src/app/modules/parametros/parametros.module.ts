@@ -52,6 +52,8 @@ import { EditarInvitacionComponent } from './invitacion/editar-invitacion/editar
 import { EliminarInvitacionComponent } from './invitacion/eliminar-invitacion/eliminar-invitacion.component';
 import { ListarInvitacionComponent } from './invitacion/listar-invitacion/listar-invitacion.component';
 import { RespuestaInvitacionComponent } from './invitacion/respuesta-invitacion/respuesta-invitacion.component';
+import { CrearResultadoEvaluacionComponent } from './resultadoEvaluacion/crear-resultado-evaluacion/crear-resultado-evaluacion.component';
+import { ListarResultadoEvaluacionComponent } from './resultadoEvaluacion/listar-resultado-evaluacion/listar-resultado-evaluacion.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +106,8 @@ import { RespuestaInvitacionComponent } from './invitacion/respuesta-invitacion/
     EliminarInvitacionComponent,
     ListarInvitacionComponent,
     RespuestaInvitacionComponent,
+    CrearResultadoEvaluacionComponent,
+    ListarResultadoEvaluacionComponent,
   ],
   imports: [
     CommonModule,

@@ -35,8 +35,8 @@ export class LocalStorageService {
     console.log('currendata token', currentData);
     if (currentData) {
       let sessionDataJson = JSON.parse(currentData);
-      console.log(`$Token String :${sessionDataJson.token}`);
-      return sessionDataJson.token;
+      console.log(`$Token String :${sessionDataJson.tk}`);
+      return sessionDataJson.tk;
     } else {
       return '';
     }
@@ -72,6 +72,18 @@ export class LocalStorageService {
       let sessionDataJson = JSON.parse(currentData);
       console.log(`$Rol String :${sessionDataJson.usuario.id_rol}`);
       return sessionDataJson.usuario.id_rol;
+    } else {
+      return '';
+    }
+  }
+
+  GetCorreo(): string {
+    let currentData = localStorage.getItem('session-info');
+    console.log('currendata correo', currentData);
+    if (currentData) {
+      let sessionDataJson = JSON.parse(currentData);
+      console.log(`$Correo String :${sessionDataJson.usuario.correo}`);
+      return sessionDataJson.usuario.correo;
     } else {
       return '';
     }

@@ -1,1 +1,48 @@
-<p>listar-resultado-evaluacion works!</p>
+<br />
+<a routerLink="/parametros/crear-solicitud" class="btn btn-success">Agregar Registro</a>
+
+<fieldset>
+	<legend>Listado de Registros</legend>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					Id
+				</th>
+				<th>
+					Nombre Trabajo
+				</th>
+				<th>
+					Descripcion
+				</th>
+                <th>
+					Resultado
+				</th>
+				<th>
+					Acciones
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr
+				*ngFor="let r of recordList">
+				<td>
+					{{r[0]}}
+				</td>
+				<td>
+					{{r[1]}}
+				</td>
+				<td>
+					{{r[2]}}
+				</td>
+				<td>
+					{{r[3]}}
+				</td>
+				<td>
+					<a routerLink="/parametros/editar-resultado-evaluacion/{{r[0]}}"
+						class="btn btn-warning orange">Evaluar</a>&nbsp;
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</fieldset>
