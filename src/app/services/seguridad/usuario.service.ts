@@ -11,13 +11,14 @@ import { LocalStorageService } from '../shared/local-storage.service';
 export class UsuarioService {
   url: string = ConfigurationData.SECURITY_MS_URL;
   tk: string = "";
+  filter: string = `?filter={"include":[{"relation": "rol"}]}`;
   constructor(private http: HttpClient,
     private localStorageService: LocalStorageService) {
     this.tk = this.localStorageService.GetToken();
   }
 
   GetRecordList(): Observable<UsuarioModel[]> {
-    return this.http.get<UsuarioModel[]>(`${this.url}/usuarios`);
+    return this.http.get<UsuarioModel[]>(`${this.url}/usuarios${this.filter}`);
   }
 
   SearchRecord(id: number): Observable<UsuarioModel> {

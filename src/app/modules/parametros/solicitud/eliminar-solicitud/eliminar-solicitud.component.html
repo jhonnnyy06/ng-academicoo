@@ -1,1 +1,27 @@
-<p>eliminar-solicitud works!</p>
+
+<div class="row">
+	<div class="row">
+		<div class="input-field col s12">
+
+			<strong>¿Está seguro(a) de eliminar el registro con la siguiente información?</strong>
+			<br />
+			<ul>
+				<li>
+					id: {{id}}
+				</li>
+				<li>
+					Nombre Trabajo: {{nombreTrabajo}}
+				</li>
+                <li>
+					Descripción: {{descripcion}}
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+			<button type="button" class="btn btn-success" (click)="RemoveRecord()">Confirmar</button>
+			&nbsp;<a class="btn btn-warning orange" routerLink="/parametros/listar-solicitud">Cancelar</a>
+		</div>
+	</div>
+</div>

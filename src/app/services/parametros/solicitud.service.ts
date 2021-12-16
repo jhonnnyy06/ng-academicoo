@@ -26,7 +26,7 @@ export class SolicitudService {
     );
   }
 
-  SearchRecord(id: number): Observable<SolicitudModel> {
+  SearchRecord(id: number): Observable<SolicitudModel> { 
     return this.http.get<SolicitudModel>(`${this.url}/solicitudes/${id}`);
   }
 
@@ -42,7 +42,7 @@ export class SolicitudService {
         id_proponente: data.id_proponente,
         id_area_investigacion: data.id_area_investigacion,
         id_tipo_solicitud: data.id_tipo_solicitud,
-        id_modalidad: data.modalidad,
+        id_modalidad: data.id_modalidad,
       },
       {
         headers: new HttpHeaders({
