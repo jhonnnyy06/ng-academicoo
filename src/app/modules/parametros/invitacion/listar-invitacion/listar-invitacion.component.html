@@ -50,15 +50,17 @@
 				<td>
 					{{r.corresponde_a?.nombreCompleto}}
 				</td>
-				<td>
-					{{r.respuesta}}
+				<td [ngSwitch]="r.respuesta">
+					<span *ngSwitchCase=0>Sin respuesta</span>
+					<span *ngSwitchCase=2>Rechazado</span>
+					<span *ngSwitchCase=3>Aceptado</span>
 				</td>
 				<td>
 					{{r.observaciones}}
 				</td>
 				<td>
 					<a routerLink="/parametros/editar-invitacion/{{r.id}}"
-						class="btn btn-warning orange">Editar</a>&nbsp;
+						class="btn btn-warning orange">Recordatorio</a>&nbsp;
 					<a routerLink="/parametros/eliminar-invitacion/{{r.id}}" class="btn btn-warning red">Eliminar</a>
 				</td>
 			</tr>

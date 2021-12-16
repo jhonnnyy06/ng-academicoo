@@ -20,7 +20,7 @@ export class JuradoService {
   GetRecordList(): Observable<JuradoModel[]> {
     return this.http.get<JuradoModel[]>(`${this.url}/jurados`);
   }
-  SearchRecord(id: NumberConstructor): Observable<JuradoModel> {
+  SearchRecord(id: Number): Observable<JuradoModel> {
     return this.http.get<JuradoModel>(`${this.url}/jurados/${id}`);
   }
 

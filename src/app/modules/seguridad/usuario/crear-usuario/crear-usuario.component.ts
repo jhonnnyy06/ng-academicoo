@@ -65,7 +65,7 @@ export class CrearUsuarioComponent implements OnInit {
     model.nombre = this.GetDF["nombre"].value;
     model.correo = this.GetDF["correo"].value;
     model.celular = this.GetDF["celular"].value.toString() ;
-    model.clave = this.GetDF["celular"].value.toString();
+    model.clave = this.GetDF["clave"].value.toString();
     model.id_rol = this.GetDF["rol"].value;
     console.log(model)
     this.service.SaveRecord(model).subscribe({

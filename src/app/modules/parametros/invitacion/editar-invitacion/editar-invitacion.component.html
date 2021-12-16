@@ -1,1 +1,36 @@
-<p>editar-invitacion works!</p>
+
+<div class="row">
+	<div class="row">
+		<div class="input-field col s12">
+
+			<strong>Datos Invitacion</strong>
+			<br />
+			<ul>
+				<li>
+					id: {{id}}
+				</li>
+                <li>
+					Nombre Jurado: {{nombre}}
+				</li>
+                <li>
+					Celular: {{celular}}
+				</li>
+                <li>
+					Correo: {{correo}}
+				</li>
+				<li>
+					Fecha Invitacion: {{fecha_invitacion}}
+				</li>
+                <li>
+					Respuesta: {{respuesta}}
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+			<button type="button" class="btn btn-success" (click)="Record()">Enviar Recordatorio</button>
+			&nbsp;<a class="btn btn-warning orange" routerLink="/parametros/listar-invitacion">Registrar llamada</a>
+		</div>
+	</div>
+</div>

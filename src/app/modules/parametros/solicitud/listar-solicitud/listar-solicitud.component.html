@@ -59,8 +59,10 @@
 				<td>
 					{{r.descripcion}}
 				</td>
-				<td>
-					{{r.estado}}
+				<td [ngSwitch]="r.estado">
+					<span *ngSwitchCase=1>asignado</span>
+					<span *ngSwitchCase=2>en evaluacion</span>
+					<span *ngSwitchCase=3>evaluado</span>
 				</td>
 				<td>
 					{{r.modalidad?.nombre}}
